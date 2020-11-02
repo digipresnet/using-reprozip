@@ -1,2 +1,2 @@
 #!/bin/bash
-JUPYTER_TOKEN=devtoken jupyter-repo2docker -v $PWD:. .
+jupyter-repo2docker --env JUPYTER_TOKEN=devtoken -p 53020:8000 -v $PWD:. . jupyter notebook --ip 0.0.0.0 --port 8000

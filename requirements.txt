@@ -1,3 +1,4 @@
 reprozip==1.0.16
 reprounzip==1.0.16
+graphviz==0.14.2
 

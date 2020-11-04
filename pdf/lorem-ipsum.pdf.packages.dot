@@ -1,0 +1,123 @@
+digraph G {
+    rankdir=LR;
+
+    /* programs */
+    node [shape=box fontcolor=white fillcolor=black style="filled,rounded"];
+    subgraph cluster_run0 {
+        label="run0";
+        prog0 [label="/usr/bin/gs (1)"];
+    }
+
+    node [shape=ellipse fontcolor="#131C39" fillcolor="#C9D2ED"];
+
+    /* system packages */
+    "pkg ghostscript" [shape=box,label="ghostscript 9.26~dfsg+0-0ubuntu0.18.04.13"];
+    "pkg libavahi-client3" [shape=box,label="libavahi-client3 0.7-3.1ubuntu1.2"];
+    "pkg libavahi-common3" [shape=box,label="libavahi-common3 0.7-3.1ubuntu1.2"];
+    "pkg libc6" [shape=box,label="libc6 2.27-3ubuntu1.2"];
+    "pkg libcom-err2" [shape=box,label="libcom-err2 1.44.1-1ubuntu1.3"];
+    "pkg libcups2" [shape=box,label="libcups2 2.2.7-1ubuntu2.8"];
+    "pkg libcupsimage2" [shape=box,label="libcupsimage2 2.2.7-1ubuntu2.8"];
+    "pkg libdbus-1-3" [shape=box,label="libdbus-1-3 1.12.2-1ubuntu1.2"];
+    "pkg libexpat1" [shape=box,label="libexpat1 2.2.5-3ubuntu0.2"];
+    "pkg libffi6" [shape=box,label="libffi6 3.2.1-8"];
+    "pkg libfontconfig1" [shape=box,label="libfontconfig1 2.12.6-0ubuntu2"];
+    "pkg libfreetype6" [shape=box,label="libfreetype6 2.8.1-2ubuntu2"];
+    "pkg libgcrypt20" [shape=box,label="libgcrypt20 1.8.1-4ubuntu1.2"];
+    "pkg libgmp10" [shape=box,label="libgmp10 2:6.1.2+dfsg-2"];
+    "pkg libgnutls30" [shape=box,label="libgnutls30 3.5.18-1ubuntu1.4"];
+    "pkg libgpg-error0" [shape=box,label="libgpg-error0 1.27-6"];
+    "pkg libgs9" [shape=box,label="libgs9 9.26~dfsg+0-0ubuntu0.18.04.13"];
+    "pkg libgs9-common" [shape=box,label="libgs9-common 9.26~dfsg+0-0ubuntu0.18.04.13"];
+    "pkg libgssapi-krb5-2" [shape=box,label="libgssapi-krb5-2 1.16-2ubuntu0.1"];
+    "pkg libhogweed4" [shape=box,label="libhogweed4 3.4-1"];
+    "pkg libidn11" [shape=box,label="libidn11 1.33-2.1ubuntu1.2"];
+    "pkg libidn2-0" [shape=box,label="libidn2-0 2.0.4-1.1ubuntu0.2"];
+    "pkg libijs-0.35" [shape=box,label="libijs-0.35 0.35-13"];
+    "pkg libjbig0" [shape=box,label="libjbig0 2.1-3.1build1"];
+    "pkg libjbig2dec0" [shape=box,label="libjbig2dec0 0.13-6"];
+    "pkg libjpeg-turbo8" [shape=box,label="libjpeg-turbo8 1.5.2-0ubuntu5.18.04.4"];
+    "pkg libk5crypto3" [shape=box,label="libk5crypto3 1.16-2ubuntu0.1"];
+    "pkg libkeyutils1" [shape=box,label="libkeyutils1 1.5.9-9.2ubuntu2"];
+    "pkg libkrb5-3" [shape=box,label="libkrb5-3 1.16-2ubuntu0.1"];
+    "pkg libkrb5support0" [shape=box,label="libkrb5support0 1.16-2ubuntu0.1"];
+    "pkg liblcms2-2" [shape=box,label="liblcms2-2 2.9-1ubuntu0.1"];
+    "pkg liblz4-1" [shape=box,label="liblz4-1 0.0~r131-2ubuntu3"];
+    "pkg liblzma5" [shape=box,label="liblzma5 5.2.2-1.3"];
+    "pkg libnettle6" [shape=box,label="libnettle6 3.4-1"];
+    "pkg libp11-kit0" [shape=box,label="libp11-kit0 0.23.9-2"];
+    "pkg libpaper1" [shape=box,label="libpaper1 1.1.24+nmu5ubuntu1"];
+    "pkg libpng16-16" [shape=box,label="libpng16-16 1.6.34-1ubuntu0.18.04.2"];
+    "pkg libsystemd0" [shape=box,label="libsystemd0 237-3ubuntu10.42"];
+    "pkg libtasn1-6" [shape=box,label="libtasn1-6 4.13-2"];
+    "pkg libtiff5" [shape=box,label="libtiff5 4.0.9-5ubuntu0.3"];
+    "pkg libunistring2" [shape=box,label="libunistring2 0.9.9-0ubuntu2"];
+    "pkg zlib1g" [shape=box,label="zlib1g 1:1.2.11.dfsg-0ubuntu2"];
+
+    /* other files */
+    "/etc/ld.so.cache";
+    "/etc/papersize";
+    "/home/andy/pdf/lorem-ipsum-001.png" [fillcolor="#A3B4E0", label="lorem-ipsum-001.png\n/home/andy/pdf/lorem-ipsum-001.png"];
+    "/home/andy/pdf/lorem-ipsum-002.png" [fillcolor="#A3B4E0", label="lorem-ipsum-002.png\n/home/andy/pdf/lorem-ipsum-002.png"];
+    "/home/andy/pdf/lorem-ipsum.pdf" [fillcolor="#A3B4E0", label="arg\n/home/andy/pdf/lorem-ipsum.pdf"];
+    "/usr/share/ghostscript/9.26/iccprofiles/default_cmyk.icc";
+    "/usr/share/ghostscript/9.26/iccprofiles/default_gray.icc";
+    "/usr/share/ghostscript/9.26/iccprofiles/default_rgb.icc";
+    "/usr/share/ghostscript/9.26/iccprofiles/lab.icc";
+    "/var/lib/ghostscript/fonts/Fontmap";
+    "/var/lib/ghostscript/fonts/cidfmap";
+
+    "pkg ghostscript" -> prog0 [style=bold, label="gs ..."];
+    "pkg libc6" -> prog0 [color="#8888CC"];
+    "/etc/ld.so.cache" -> prog0 [color="#8888CC"];
+    "pkg libgs9" -> prog0 [color="#8888CC"];
+    "pkg libtiff5" -> prog0 [color="#8888CC"];
+    "pkg libcupsimage2" -> prog0 [color="#8888CC"];
+    "pkg libcups2" -> prog0 [color="#8888CC"];
+    "pkg libijs-0.35" -> prog0 [color="#8888CC"];
+    "pkg libpng16-16" -> prog0 [color="#8888CC"];
+    "pkg libjbig2dec0" -> prog0 [color="#8888CC"];
+    "pkg libjpeg-turbo8" -> prog0 [color="#8888CC"];
+    "pkg zlib1g" -> prog0 [color="#8888CC"];
+    "pkg liblcms2-2" -> prog0 [color="#8888CC"];
+    "pkg libidn11" -> prog0 [color="#8888CC"];
+    "pkg libpaper1" -> prog0 [color="#8888CC"];
+    "pkg libfontconfig1" -> prog0 [color="#8888CC"];
+    "pkg libfreetype6" -> prog0 [color="#8888CC"];
+    "pkg liblzma5" -> prog0 [color="#8888CC"];
+    "pkg libjbig0" -> prog0 [color="#8888CC"];
+    "pkg libgssapi-krb5-2" -> prog0 [color="#8888CC"];
+    "pkg libgnutls30" -> prog0 [color="#8888CC"];
+    "pkg libavahi-common3" -> prog0 [color="#8888CC"];
+    "pkg libavahi-client3" -> prog0 [color="#8888CC"];
+    "pkg libexpat1" -> prog0 [color="#8888CC"];
+    "pkg libkrb5-3" -> prog0 [color="#8888CC"];
+    "pkg libk5crypto3" -> prog0 [color="#8888CC"];
+    "pkg libcom-err2" -> prog0 [color="#8888CC"];
+    "pkg libkrb5support0" -> prog0 [color="#8888CC"];
+    "pkg libp11-kit0" -> prog0 [color="#8888CC"];
+    "pkg libidn2-0" -> prog0 [color="#8888CC"];
+    "pkg libunistring2" -> prog0 [color="#8888CC"];
+    "pkg libtasn1-6" -> prog0 [color="#8888CC"];
+    "pkg libnettle6" -> prog0 [color="#8888CC"];
+    "pkg libhogweed4" -> prog0 [color="#8888CC"];
+    "pkg libgmp10" -> prog0 [color="#8888CC"];
+    "pkg libdbus-1-3" -> prog0 [color="#8888CC"];
+    "pkg libkeyutils1" -> prog0 [color="#8888CC"];
+    "pkg libffi6" -> prog0 [color="#8888CC"];
+    "pkg libsystemd0" -> prog0 [color="#8888CC"];
+    "pkg liblz4-1" -> prog0 [color="#8888CC"];
+    "pkg libgcrypt20" -> prog0 [color="#8888CC"];
+    "pkg libgpg-error0" -> prog0 [color="#8888CC"];
+    "pkg libgs9-common" -> prog0 [color="#8888CC"];
+    "/var/lib/ghostscript/fonts/cidfmap" -> prog0 [color="#8888CC"];
+    "/var/lib/ghostscript/fonts/Fontmap" -> prog0 [color="#8888CC"];
+    "/etc/papersize" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/iccprofiles/default_gray.icc" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/iccprofiles/default_rgb.icc" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/iccprofiles/default_cmyk.icc" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/iccprofiles/lab.icc" -> prog0 [color="#8888CC"];
+    "/home/andy/pdf/lorem-ipsum.pdf" -> prog0 [color="#8888CC"];
+    prog0 -> "/home/andy/pdf/lorem-ipsum-001.png" [color="#000088"];
+    prog0 -> "/home/andy/pdf/lorem-ipsum-002.png" [color="#000088"];
+}

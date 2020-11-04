@@ -26,14 +26,11 @@
     }
   ],
   "other_files": [
-    "/dev/tty",
     "/etc/ld.so.cache",
     "/etc/papersize",
     "/home/andy/pdf/lorem-ipsum-001.png",
     "/home/andy/pdf/lorem-ipsum-002.png",
     "/home/andy/pdf/lorem-ipsum.pdf",
-    "/home/andy/pdf/render-pdf.sh",
-    "/usr/lib/locale/locale-archive",
     "/usr/share/ghostscript/9.26/iccprofiles/default_cmyk.icc",
     "/usr/share/ghostscript/9.26/iccprofiles/default_gray.icc",
     "/usr/share/ghostscript/9.26/iccprofiles/default_rgb.icc",
@@ -42,13 +39,6 @@
     "/var/lib/ghostscript/fonts/cidfmap"
   ],
   "packages": [
-    {
-      "files": [
-        "/bin/bash"
-      ],
-      "name": "bash",
-      "version": "4.4.18-2ubuntu1.2"
-    },
     {
       "files": [
         "/usr/bin/gs"
@@ -78,8 +68,7 @@
         "/lib/x86_64-linux-gnu/libm.so.6",
         "/lib/x86_64-linux-gnu/libpthread.so.0",
         "/lib/x86_64-linux-gnu/libresolv.so.2",
-        "/lib/x86_64-linux-gnu/librt.so.1",
-        "/usr/lib/x86_64-linux-gnu/gconv/gconv-modules.cache"
+        "/lib/x86_64-linux-gnu/librt.so.1"
       ],
       "name": "libc6",
       "version": "2.27-3ubuntu1.2"
@@ -393,13 +382,6 @@
     },
     {
       "files": [
-        "/lib/x86_64-linux-gnu/libtinfo.so.5"
-      ],
-      "name": "libtinfo5",
-      "version": "6.1-1ubuntu1.18.04"
-    },
-    {
-      "files": [
         "/usr/lib/x86_64-linux-gnu/libunistring.so.2"
       ],
       "name": "libunistring2",
@@ -419,47 +401,17 @@
       "processes": [
         {
           "argv": [
-            "./render-pdf.sh",
-            "lorem-ipsum.pdf"
-          ],
-          "description": "/home/andy/pdf/render-pdf.sh\n1",
-          "is_thread": false,
-          "long_name": "render-pdf.sh (1)",
-          "name": "1",
-          "parent": null,
-          "reads": [
-            "/home/andy/pdf/render-pdf.sh",
-            "/bin/bash",
-            "/lib/x86_64-linux-gnu/ld-2.27.so",
-            "/etc/ld.so.cache",
-            "/lib/x86_64-linux-gnu/libtinfo.so.5",
-            "/lib/x86_64-linux-gnu/libdl.so.2",
-            "/lib/x86_64-linux-gnu/libc.so.6",
-            "/usr/lib/locale/locale-archive",
-            "/usr/lib/x86_64-linux-gnu/gconv/gconv-modules.cache",
-            "/home/andy/pdf/render-pdf.sh"
-          ],
-          "start_time": 951983349909031,
-          "writes": [
-            "/dev/tty"
-          ]
-        },
-        {
-          "argv": [
             "gs",
             "-sDEVICE=pngalpha",
             "-o",
             "lorem-ipsum-%03d.png",
             "lorem-ipsum.pdf"
           ],
-          "description": "/usr/bin/gs\n2",
+          "description": "/usr/bin/gs\n1",
           "is_thread": false,
-          "long_name": "gs (2)",
-          "name": "2",
-          "parent": [
-            0,
-            "fork+exec"
-          ],
+          "long_name": "gs (1)",
+          "name": "1",
+          "parent": null,
           "reads": [
             "/usr/bin/gs",
             "/lib/x86_64-linux-gnu/ld-2.27.so",
@@ -574,7 +526,7 @@
             "/usr/share/ghostscript/9.26/iccprofiles/lab.icc",
             "/home/andy/pdf/lorem-ipsum.pdf"
           ],
-          "start_time": 951983671586531,
+          "start_time": 62794985452930,
           "writes": [
             "/home/andy/pdf/lorem-ipsum-001.png",
             "/home/andy/pdf/lorem-ipsum-002.png"

@@ -5,19 +5,13 @@ digraph G {
     node [shape=box fontcolor=white fillcolor=black style="filled,rounded"];
     subgraph cluster_run0 {
         label="run0";
-        prog0 [label="/home/andy/pdf/render-pdf.sh (1)"];
-        prog1 [label="/usr/bin/gs (2)"];
-        prog0 -> prog1 [label="fork+exec"];
+        prog0 [label="/usr/bin/gs (1)"];
     }
 
     node [shape=ellipse fontcolor="#131C39" fillcolor="#C9D2ED"];
 
     /* system packages */
     subgraph cluster_pkg0 {
-        label="bash 4.4.18-2ubuntu1.2";
-        "/bin/bash";
-    }
-    subgraph cluster_pkg1 {
         label="fontconfig-config 2.12.6-0ubuntu2";
         "/etc/fonts/conf.d/10-antialias.conf";
         "/etc/fonts/conf.d/10-hinting-slight.conf";
@@ -41,7 +35,7 @@ digraph G {
         "/etc/fonts/conf.d/90-synthetic.conf";
         "/etc/fonts/fonts.conf";
     }
-    subgraph cluster_pkg2 {
+    subgraph cluster_pkg1 {
         label="fonts-dejavu-core 2.37-1";
         "/etc/fonts/conf.d/20-unhint-small-dejavu-lgc-sans-mono.conf";
         "/etc/fonts/conf.d/20-unhint-small-dejavu-lgc-sans.conf";
@@ -62,19 +56,19 @@ digraph G {
         "/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf";
         "/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf";
     }
-    subgraph cluster_pkg3 {
+    subgraph cluster_pkg2 {
         label="ghostscript 9.26~dfsg+0-0ubuntu0.18.04.13";
         "/usr/bin/gs";
     }
-    subgraph cluster_pkg4 {
+    subgraph cluster_pkg3 {
         label="libavahi-client3 0.7-3.1ubuntu1.2";
         "/usr/lib/x86_64-linux-gnu/libavahi-client.so.3";
     }
-    subgraph cluster_pkg5 {
+    subgraph cluster_pkg4 {
         label="libavahi-common3 0.7-3.1ubuntu1.2";
         "/usr/lib/x86_64-linux-gnu/libavahi-common.so.3";
     }
-    subgraph cluster_pkg6 {
+    subgraph cluster_pkg5 {
         label="libc6 2.27-3ubuntu1.2";
         "/lib/x86_64-linux-gnu/ld-2.27.so";
         "/lib/x86_64-linux-gnu/libc.so.6";
@@ -83,61 +77,60 @@ digraph G {
         "/lib/x86_64-linux-gnu/libpthread.so.0";
         "/lib/x86_64-linux-gnu/libresolv.so.2";
         "/lib/x86_64-linux-gnu/librt.so.1";
-        "/usr/lib/x86_64-linux-gnu/gconv/gconv-modules.cache";
     }
-    subgraph cluster_pkg7 {
+    subgraph cluster_pkg6 {
         label="libcom-err2 1.44.1-1ubuntu1.3";
         "/lib/x86_64-linux-gnu/libcom_err.so.2";
     }
-    subgraph cluster_pkg8 {
+    subgraph cluster_pkg7 {
         label="libcups2 2.2.7-1ubuntu2.8";
         "/usr/lib/x86_64-linux-gnu/libcups.so.2";
     }
-    subgraph cluster_pkg9 {
+    subgraph cluster_pkg8 {
         label="libcupsimage2 2.2.7-1ubuntu2.8";
         "/usr/lib/x86_64-linux-gnu/libcupsimage.so.2";
     }
-    subgraph cluster_pkg10 {
+    subgraph cluster_pkg9 {
         label="libdbus-1-3 1.12.2-1ubuntu1.2";
         "/lib/x86_64-linux-gnu/libdbus-1.so.3";
     }
-    subgraph cluster_pkg11 {
+    subgraph cluster_pkg10 {
         label="libexpat1 2.2.5-3ubuntu0.2";
         "/lib/x86_64-linux-gnu/libexpat.so.1";
     }
-    subgraph cluster_pkg12 {
+    subgraph cluster_pkg11 {
         label="libffi6 3.2.1-8";
         "/usr/lib/x86_64-linux-gnu/libffi.so.6";
     }
-    subgraph cluster_pkg13 {
+    subgraph cluster_pkg12 {
         label="libfontconfig1 2.12.6-0ubuntu2";
         "/usr/lib/x86_64-linux-gnu/libfontconfig.so.1";
     }
-    subgraph cluster_pkg14 {
+    subgraph cluster_pkg13 {
         label="libfreetype6 2.8.1-2ubuntu2";
         "/usr/lib/x86_64-linux-gnu/libfreetype.so.6";
     }
-    subgraph cluster_pkg15 {
+    subgraph cluster_pkg14 {
         label="libgcrypt20 1.8.1-4ubuntu1.2";
         "/lib/x86_64-linux-gnu/libgcrypt.so.20";
     }
-    subgraph cluster_pkg16 {
+    subgraph cluster_pkg15 {
         label="libgmp10 2:6.1.2+dfsg-2";
         "/usr/lib/x86_64-linux-gnu/libgmp.so.10";
     }
-    subgraph cluster_pkg17 {
+    subgraph cluster_pkg16 {
         label="libgnutls30 3.5.18-1ubuntu1.4";
         "/usr/lib/x86_64-linux-gnu/libgnutls.so.30";
     }
-    subgraph cluster_pkg18 {
+    subgraph cluster_pkg17 {
         label="libgpg-error0 1.27-6";
         "/lib/x86_64-linux-gnu/libgpg-error.so.0";
     }
-    subgraph cluster_pkg19 {
+    subgraph cluster_pkg18 {
         label="libgs9 9.26~dfsg+0-0ubuntu0.18.04.13";
         "/usr/lib/x86_64-linux-gnu/libgs.so.9";
     }
-    subgraph cluster_pkg20 {
+    subgraph cluster_pkg19 {
         label="libgs9-common 9.26~dfsg+0-0ubuntu0.18.04.13";
         "/usr/share/ghostscript/9.26/Resource/Decoding/StandardEncoding";
         "/usr/share/ghostscript/9.26/Resource/Font/NimbusRoman-Bold";
@@ -204,103 +197,99 @@ digraph G {
         "/usr/share/ghostscript/9.26/Resource/Init/pdf_sec.ps";
         "/usr/share/ghostscript/9.26/Resource/Init/xlatmap";
     }
-    subgraph cluster_pkg21 {
+    subgraph cluster_pkg20 {
         label="libgssapi-krb5-2 1.16-2ubuntu0.1";
         "/usr/lib/x86_64-linux-gnu/libgssapi_krb5.so.2";
     }
-    subgraph cluster_pkg22 {
+    subgraph cluster_pkg21 {
         label="libhogweed4 3.4-1";
         "/usr/lib/x86_64-linux-gnu/libhogweed.so.4";
     }
-    subgraph cluster_pkg23 {
+    subgraph cluster_pkg22 {
         label="libidn11 1.33-2.1ubuntu1.2";
         "/lib/x86_64-linux-gnu/libidn.so.11";
     }
-    subgraph cluster_pkg24 {
+    subgraph cluster_pkg23 {
         label="libidn2-0 2.0.4-1.1ubuntu0.2";
         "/usr/lib/x86_64-linux-gnu/libidn2.so.0";
     }
-    subgraph cluster_pkg25 {
+    subgraph cluster_pkg24 {
         label="libijs-0.35 0.35-13";
         "/usr/lib/x86_64-linux-gnu/libijs-0.35.so";
     }
-    subgraph cluster_pkg26 {
+    subgraph cluster_pkg25 {
         label="libjbig0 2.1-3.1build1";
         "/usr/lib/x86_64-linux-gnu/libjbig.so.0";
     }
-    subgraph cluster_pkg27 {
+    subgraph cluster_pkg26 {
         label="libjbig2dec0 0.13-6";
         "/usr/lib/x86_64-linux-gnu/libjbig2dec.so.0";
     }
-    subgraph cluster_pkg28 {
+    subgraph cluster_pkg27 {
         label="libjpeg-turbo8 1.5.2-0ubuntu5.18.04.4";
         "/usr/lib/x86_64-linux-gnu/libjpeg.so.8";
     }
-    subgraph cluster_pkg29 {
+    subgraph cluster_pkg28 {
         label="libk5crypto3 1.16-2ubuntu0.1";
         "/usr/lib/x86_64-linux-gnu/libk5crypto.so.3";
     }
-    subgraph cluster_pkg30 {
+    subgraph cluster_pkg29 {
         label="libkeyutils1 1.5.9-9.2ubuntu2";
         "/lib/x86_64-linux-gnu/libkeyutils.so.1";
     }
-    subgraph cluster_pkg31 {
+    subgraph cluster_pkg30 {
         label="libkrb5-3 1.16-2ubuntu0.1";
         "/usr/lib/x86_64-linux-gnu/libkrb5.so.3";
     }
-    subgraph cluster_pkg32 {
+    subgraph cluster_pkg31 {
         label="libkrb5support0 1.16-2ubuntu0.1";
         "/usr/lib/x86_64-linux-gnu/libkrb5support.so.0";
     }
-    subgraph cluster_pkg33 {
+    subgraph cluster_pkg32 {
         label="liblcms2-2 2.9-1ubuntu0.1";
         "/usr/lib/x86_64-linux-gnu/liblcms2.so.2";
     }
-    subgraph cluster_pkg34 {
+    subgraph cluster_pkg33 {
         label="liblz4-1 0.0~r131-2ubuntu3";
         "/usr/lib/x86_64-linux-gnu/liblz4.so.1";
     }
-    subgraph cluster_pkg35 {
+    subgraph cluster_pkg34 {
         label="liblzma5 5.2.2-1.3";
         "/lib/x86_64-linux-gnu/liblzma.so.5";
     }
-    subgraph cluster_pkg36 {
+    subgraph cluster_pkg35 {
         label="libnettle6 3.4-1";
         "/usr/lib/x86_64-linux-gnu/libnettle.so.6";
     }
-    subgraph cluster_pkg37 {
+    subgraph cluster_pkg36 {
         label="libp11-kit0 0.23.9-2";
         "/usr/lib/x86_64-linux-gnu/libp11-kit.so.0";
     }
-    subgraph cluster_pkg38 {
+    subgraph cluster_pkg37 {
         label="libpaper1 1.1.24+nmu5ubuntu1";
         "/usr/lib/x86_64-linux-gnu/libpaper.so.1";
     }
-    subgraph cluster_pkg39 {
+    subgraph cluster_pkg38 {
         label="libpng16-16 1.6.34-1ubuntu0.18.04.2";
         "/usr/lib/x86_64-linux-gnu/libpng16.so.16";
     }
-    subgraph cluster_pkg40 {
+    subgraph cluster_pkg39 {
         label="libsystemd0 237-3ubuntu10.42";
         "/lib/x86_64-linux-gnu/libsystemd.so.0";
     }
-    subgraph cluster_pkg41 {
+    subgraph cluster_pkg40 {
         label="libtasn1-6 4.13-2";
         "/usr/lib/x86_64-linux-gnu/libtasn1.so.6";
     }
-    subgraph cluster_pkg42 {
+    subgraph cluster_pkg41 {
         label="libtiff5 4.0.9-5ubuntu0.3";
         "/usr/lib/x86_64-linux-gnu/libtiff.so.5";
     }
-    subgraph cluster_pkg43 {
-        label="libtinfo5 6.1-1ubuntu1.18.04";
-        "/lib/x86_64-linux-gnu/libtinfo.so.5";
-    }
-    subgraph cluster_pkg44 {
+    subgraph cluster_pkg42 {
         label="libunistring2 0.9.9-0ubuntu2";
         "/usr/lib/x86_64-linux-gnu/libunistring.so.2";
     }
-    subgraph cluster_pkg45 {
+    subgraph cluster_pkg43 {
         label="poppler-data 0.4.8-2";
         "/usr/share/fonts/cmap/adobe-cns1";
         "/usr/share/fonts/cmap/adobe-gb1";
@@ -308,16 +297,14 @@ digraph G {
         "/usr/share/fonts/cmap/adobe-japan2";
         "/usr/share/fonts/cmap/adobe-korea1";
     }
-    subgraph cluster_pkg46 {
+    subgraph cluster_pkg44 {
         label="zlib1g 1:1.2.11.dfsg-0ubuntu2";
         "/lib/x86_64-linux-gnu/libz.so.1";
     }
 
     /* other files */
-    "/dev/tty";
     "/etc/ld.so.cache";
     "/etc/papersize";
-    "/home/andy/pdf/render-pdf.sh";
     "/home/andy/pdf/test_fontArialNotEmbedded-001.png" [fillcolor="#A3B4E0", label="test_fontArialNotEmbedded-001.png\n/home/andy/pdf/test_fontArialNotEmbedded-001.png"];
     "/home/andy/pdf/test_fontArialNotEmbedded-002.png" [fillcolor="#A3B4E0", label="test_fontArialNotEmbedded-002.png\n/home/andy/pdf/test_fontArialNotEmbedded-002.png"];
     "/home/andy/pdf/test_fontArialNotEmbedded-003.png" [fillcolor="#A3B4E0", label="test_fontArialNotEmbedded-003.png\n/home/andy/pdf/test_fontArialNotEmbedded-003.png"];
@@ -375,7 +362,6 @@ digraph G {
     "/home/andy/pdf/test_fontArialNotEmbedded-055.png" [fillcolor="#A3B4E0", label="test_fontArialNotEmbedded-055.png\n/home/andy/pdf/test_fontArialNotEmbedded-055.png"];
     "/home/andy/pdf/test_fontArialNotEmbedded-056.png" [fillcolor="#A3B4E0", label="test_fontArialNotEmbedded-056.png\n/home/andy/pdf/test_fontArialNotEmbedded-056.png"];
     "/home/andy/pdf/test_fontArialNotEmbedded.pdf" [fillcolor="#A3B4E0", label="arg\n/home/andy/pdf/test_fontArialNotEmbedded.pdf"];
-    "/usr/lib/locale/locale-archive";
     "/usr/share/ghostscript/9.26/Resource/CMap/Identity-H";
     "/usr/share/ghostscript/9.26/iccprofiles/default_cmyk.icc";
     "/usr/share/ghostscript/9.26/iccprofiles/default_gray.icc";
@@ -395,247 +381,236 @@ digraph G {
     "/var/lib/ghostscript/fonts/Fontmap";
     "/var/lib/ghostscript/fonts/cidfmap";
 
-    "/home/andy/pdf/render-pdf.sh" -> prog0 [style=bold, label="./render-pdf.sh test_fontArialNotEmbedded.pdf"];
-    "/bin/bash" -> prog0 [color="#8888CC"];
+    "/usr/bin/gs" -> prog0 [style=bold, label="gs ..."];
     "/lib/x86_64-linux-gnu/ld-2.27.so" -> prog0 [color="#8888CC"];
     "/etc/ld.so.cache" -> prog0 [color="#8888CC"];
-    "/lib/x86_64-linux-gnu/libtinfo.so.5" -> prog0 [color="#8888CC"];
-    "/lib/x86_64-linux-gnu/libdl.so.2" -> prog0 [color="#8888CC"];
+    "/usr/lib/x86_64-linux-gnu/libgs.so.9" -> prog0 [color="#8888CC"];
     "/lib/x86_64-linux-gnu/libc.so.6" -> prog0 [color="#8888CC"];
-    prog0 -> "/dev/tty" [color="#000088"];
-    "/usr/lib/locale/locale-archive" -> prog0 [color="#8888CC"];
-    "/usr/lib/x86_64-linux-gnu/gconv/gconv-modules.cache" -> prog0 [color="#8888CC"];
-    "/home/andy/pdf/render-pdf.sh" -> prog0 [color="#8888CC"];
-    "/usr/bin/gs" -> prog1 [style=bold, label="gs ..."];
-    "/lib/x86_64-linux-gnu/ld-2.27.so" -> prog1 [color="#8888CC"];
-    "/etc/ld.so.cache" -> prog1 [color="#8888CC"];
-    "/usr/lib/x86_64-linux-gnu/libgs.so.9" -> prog1 [color="#8888CC"];
-    "/lib/x86_64-linux-gnu/libc.so.6" -> prog1 [color="#8888CC"];
-    "/usr/lib/x86_64-linux-gnu/libtiff.so.5" -> prog1 [color="#8888CC"];
-    "/usr/lib/x86_64-linux-gnu/libcupsimage.so.2" -> prog1 [color="#8888CC"];
-    "/usr/lib/x86_64-linux-gnu/libcups.so.2" -> prog1 [color="#8888CC"];
-    "/usr/lib/x86_64-linux-gnu/libijs-0.35.so" -> prog1 [color="#8888CC"];
-    "/usr/lib/x86_64-linux-gnu/libpng16.so.16" -> prog1 [color="#8888CC"];
-    "/usr/lib/x86_64-linux-gnu/libjbig2dec.so.0" -> prog1 [color="#8888CC"];
-    "/usr/lib/x86_64-linux-gnu/libjpeg.so.8" -> prog1 [color="#8888CC"];
-    "/lib/x86_64-linux-gnu/libz.so.1" -> prog1 [color="#8888CC"];
-    "/usr/lib/x86_64-linux-gnu/liblcms2.so.2" -> prog1 [color="#8888CC"];
-    "/lib/x86_64-linux-gnu/libm.so.6" -> prog1 [color="#8888CC"];
-    "/lib/x86_64-linux-gnu/libdl.so.2" -> prog1 [color="#8888CC"];
-    "/lib/x86_64-linux-gnu/libidn.so.11" -> prog1 [color="#8888CC"];
-    "/usr/lib/x86_64-linux-gnu/libpaper.so.1" -> prog1 [color="#8888CC"];
-    "/usr/lib/x86_64-linux-gnu/libfontconfig.so.1" -> prog1 [color="#8888CC"];
-    "/usr/lib/x86_64-linux-gnu/libfreetype.so.6" -> prog1 [color="#8888CC"];
-    "/lib/x86_64-linux-gnu/libpthread.so.0" -> prog1 [color="#8888CC"];
-    "/lib/x86_64-linux-gnu/liblzma.so.5" -> prog1 [color="#8888CC"];
-    "/usr/lib/x86_64-linux-gnu/libjbig.so.0" -> prog1 [color="#8888CC"];
-    "/usr/lib/x86_64-linux-gnu/libgssapi_krb5.so.2" -> prog1 [color="#8888CC"];
-    "/usr/lib/x86_64-linux-gnu/libgnutls.so.30" -> prog1 [color="#8888CC"];
-    "/usr/lib/x86_64-linux-gnu/libavahi-common.so.3" -> prog1 [color="#8888CC"];
-    "/usr/lib/x86_64-linux-gnu/libavahi-client.so.3" -> prog1 [color="#8888CC"];
-    "/lib/x86_64-linux-gnu/libexpat.so.1" -> prog1 [color="#8888CC"];
-    "/usr/lib/x86_64-linux-gnu/libkrb5.so.3" -> prog1 [color="#8888CC"];
-    "/usr/lib/x86_64-linux-gnu/libk5crypto.so.3" -> prog1 [color="#8888CC"];
-    "/lib/x86_64-linux-gnu/libcom_err.so.2" -> prog1 [color="#8888CC"];
-    "/usr/lib/x86_64-linux-gnu/libkrb5support.so.0" -> prog1 [color="#8888CC"];
-    "/usr/lib/x86_64-linux-gnu/libp11-kit.so.0" -> prog1 [color="#8888CC"];
-    "/usr/lib/x86_64-linux-gnu/libidn2.so.0" -> prog1 [color="#8888CC"];
-    "/usr/lib/x86_64-linux-gnu/libunistring.so.2" -> prog1 [color="#8888CC"];
-    "/usr/lib/x86_64-linux-gnu/libtasn1.so.6" -> prog1 [color="#8888CC"];
-    "/usr/lib/x86_64-linux-gnu/libnettle.so.6" -> prog1 [color="#8888CC"];
-    "/usr/lib/x86_64-linux-gnu/libhogweed.so.4" -> prog1 [color="#8888CC"];
-    "/usr/lib/x86_64-linux-gnu/libgmp.so.10" -> prog1 [color="#8888CC"];
-    "/lib/x86_64-linux-gnu/libdbus-1.so.3" -> prog1 [color="#8888CC"];
-    "/lib/x86_64-linux-gnu/libkeyutils.so.1" -> prog1 [color="#8888CC"];
-    "/lib/x86_64-linux-gnu/libresolv.so.2" -> prog1 [color="#8888CC"];
-    "/usr/lib/x86_64-linux-gnu/libffi.so.6" -> prog1 [color="#8888CC"];
-    "/lib/x86_64-linux-gnu/libsystemd.so.0" -> prog1 [color="#8888CC"];
-    "/lib/x86_64-linux-gnu/librt.so.1" -> prog1 [color="#8888CC"];
-    "/usr/lib/x86_64-linux-gnu/liblz4.so.1" -> prog1 [color="#8888CC"];
-    "/lib/x86_64-linux-gnu/libgcrypt.so.20" -> prog1 [color="#8888CC"];
-    "/lib/x86_64-linux-gnu/libgpg-error.so.0" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/gs_init.ps" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/gs_std_e.ps" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/gs_il1_e.ps" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/gs_statd.ps" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/gs_fonts.ps" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/gs_cspace.ps" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/gs_img.ps" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/gs_btokn.ps" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/gs_dps1.ps" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/gs_dps2.ps" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/gs_agl.ps" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/gs_type1.ps" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/gs_lev2.ps" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/gs_res.ps" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/gs_resmp.ps" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/gs_typ42.ps" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/gs_cidfn.ps" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/gs_ciddc.ps" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/gs_cidcm.ps" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/gs_fntem.ps" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/xlatmap" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/gs_sym_e.ps" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/gs_dbt_e.ps" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/gs_cidtt.ps" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/gs_cidfm.ps" -> prog1 [color="#8888CC"];
-    "/var/lib/ghostscript/fonts/cidfmap" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/gs_cmap.ps" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/gs_setpd.ps" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/gs_fapi.ps" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/FAPIfontmap" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/FAPIcidfmap" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/gs_typ32.ps" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/gs_frsd.ps" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/gs_ll3.ps" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/IdiomSet/Pscript5Idiom" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/gs_icc.ps" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/gs_mex_e.ps" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/gs_mro_e.ps" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/gs_pdf_e.ps" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/gs_wan_e.ps" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/pdf_ops.ps" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/gs_l2img.ps" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/pdf_rbld.ps" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/pdf_base.ps" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/pdf_draw.ps" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/pdf_font.ps" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/pdf_main.ps" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/pdf_sec.ps" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/gs_cff.ps" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/gs_mgl_e.ps" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/gs_ttf.ps" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/gs_dps.ps" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/gs_dpnxt.ps" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/gs_epsf.ps" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/gs_pdfwr.ps" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/Fontmap" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Init/Fontmap.GS" -> prog1 [color="#8888CC"];
-    "/var/lib/ghostscript/fonts/Fontmap" -> prog1 [color="#8888CC"];
-    "/etc/papersize" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/iccprofiles/default_gray.icc" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/iccprofiles/default_rgb.icc" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/iccprofiles/default_cmyk.icc" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/iccprofiles/lab.icc" -> prog1 [color="#8888CC"];
-    "/home/andy/pdf/test_fontArialNotEmbedded.pdf" -> prog1 [color="#8888CC"];
-    "/etc/fonts/fonts.conf" -> prog1 [color="#8888CC"];
-    "/etc/fonts/conf.d/10-antialias.conf" -> prog1 [color="#8888CC"];
-    "/etc/fonts/conf.d/10-hinting-slight.conf" -> prog1 [color="#8888CC"];
-    "/etc/fonts/conf.d/10-scale-bitmap-fonts.conf" -> prog1 [color="#8888CC"];
-    "/etc/fonts/conf.d/11-lcdfilter-default.conf" -> prog1 [color="#8888CC"];
-    "/etc/fonts/conf.d/20-unhint-small-dejavu-lgc-sans-mono.conf" -> prog1 [color="#8888CC"];
-    "/etc/fonts/conf.d/20-unhint-small-dejavu-lgc-sans.conf" -> prog1 [color="#8888CC"];
-    "/etc/fonts/conf.d/20-unhint-small-dejavu-lgc-serif.conf" -> prog1 [color="#8888CC"];
-    "/etc/fonts/conf.d/20-unhint-small-dejavu-sans-mono.conf" -> prog1 [color="#8888CC"];
-    "/etc/fonts/conf.d/20-unhint-small-dejavu-sans.conf" -> prog1 [color="#8888CC"];
-    "/etc/fonts/conf.d/20-unhint-small-dejavu-serif.conf" -> prog1 [color="#8888CC"];
-    "/etc/fonts/conf.d/20-unhint-small-vera.conf" -> prog1 [color="#8888CC"];
-    "/etc/fonts/conf.d/30-metric-aliases.conf" -> prog1 [color="#8888CC"];
-    "/etc/fonts/conf.d/40-nonlatin.conf" -> prog1 [color="#8888CC"];
-    "/etc/fonts/conf.d/45-generic.conf" -> prog1 [color="#8888CC"];
-    "/etc/fonts/conf.d/45-latin.conf" -> prog1 [color="#8888CC"];
-    "/etc/fonts/conf.d/49-sansserif.conf" -> prog1 [color="#8888CC"];
-    "/etc/fonts/conf.d/50-user.conf" -> prog1 [color="#8888CC"];
-    "/etc/fonts/conf.d/51-local.conf" -> prog1 [color="#8888CC"];
-    "/etc/fonts/conf.d/57-dejavu-sans-mono.conf" -> prog1 [color="#8888CC"];
-    "/etc/fonts/conf.d/57-dejavu-sans.conf" -> prog1 [color="#8888CC"];
-    "/etc/fonts/conf.d/57-dejavu-serif.conf" -> prog1 [color="#8888CC"];
-    "/etc/fonts/conf.d/58-dejavu-lgc-sans-mono.conf" -> prog1 [color="#8888CC"];
-    "/etc/fonts/conf.d/58-dejavu-lgc-sans.conf" -> prog1 [color="#8888CC"];
-    "/etc/fonts/conf.d/58-dejavu-lgc-serif.conf" -> prog1 [color="#8888CC"];
-    "/etc/fonts/conf.d/60-generic.conf" -> prog1 [color="#8888CC"];
-    "/etc/fonts/conf.d/60-latin.conf" -> prog1 [color="#8888CC"];
-    "/etc/fonts/conf.d/65-fonts-persian.conf" -> prog1 [color="#8888CC"];
-    "/etc/fonts/conf.d/65-nonlatin.conf" -> prog1 [color="#8888CC"];
-    "/etc/fonts/conf.d/69-unifont.conf" -> prog1 [color="#8888CC"];
-    "/etc/fonts/conf.d/70-no-bitmaps.conf" -> prog1 [color="#8888CC"];
-    "/etc/fonts/conf.d/80-delicious.conf" -> prog1 [color="#8888CC"];
-    "/etc/fonts/conf.d/90-synthetic.conf" -> prog1 [color="#8888CC"];
-    "/var/cache/fontconfig/3830d5c3ddfd5cd38a049b759396e72e-le64.cache-7" -> prog1 [color="#8888CC"];
-    "/var/cache/fontconfig/4c599c202bc5c08e2d34565a40eac3b2-le64.cache-7" -> prog1 [color="#8888CC"];
-    "/var/cache/fontconfig/32b6488e5b8292a2e95c79d947e009e8-le64.cache-7" -> prog1 [color="#8888CC"];
-    "/var/cache/fontconfig/57e423e26b20ab21d0f2f29c145174c3-le64.cache-7" -> prog1 [color="#8888CC"];
-    "/var/cache/fontconfig/7ef2298fde41cc6eeb7af42e48b7d293-le64.cache-7" -> prog1 [color="#8888CC"];
-    "/usr/share/fonts/cmap/adobe-cns1" -> prog1 [color="#8888CC"];
-    "/var/cache/fontconfig/f1f2465696798768e9653f19e17ccdc8-le64.cache-7" -> prog1 [color="#8888CC"];
-    "/usr/share/fonts/cmap/adobe-gb1" -> prog1 [color="#8888CC"];
-    "/var/cache/fontconfig/95530828ff6c81d309f8258d8d02a23e-le64.cache-7" -> prog1 [color="#8888CC"];
-    "/usr/share/fonts/cmap/adobe-japan1" -> prog1 [color="#8888CC"];
-    "/var/cache/fontconfig/d3e5c4ee2ceb1fc347f91d4cefc53bc0-le64.cache-7" -> prog1 [color="#8888CC"];
-    "/usr/share/fonts/cmap/adobe-japan2" -> prog1 [color="#8888CC"];
-    "/var/cache/fontconfig/e52a45a1c8c8fe895fc0fc8c4e6999b8-le64.cache-7" -> prog1 [color="#8888CC"];
-    "/usr/share/fonts/cmap/adobe-korea1" -> prog1 [color="#8888CC"];
-    "/var/cache/fontconfig/188ac73a183f12857f63bb60a4a6d603-le64.cache-7" -> prog1 [color="#8888CC"];
-    "/var/cache/fontconfig/d589a48862398ed80a3d6066f4f56f4c-le64.cache-7" -> prog1 [color="#8888CC"];
-    "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf" -> prog1 [color="#8888CC"];
-    "/usr/share/fonts/truetype/dejavu/DejaVuSansMono-Bold.ttf" -> prog1 [color="#8888CC"];
-    "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf" -> prog1 [color="#8888CC"];
-    "/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf" -> prog1 [color="#8888CC"];
-    "/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf" -> prog1 [color="#8888CC"];
-    "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Font/NimbusRoman-Regular" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Decoding/StandardEncoding" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Font/NimbusSans-Bold" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Font/NimbusSans-Regular" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Font/NimbusRoman-Bold" -> prog1 [color="#8888CC"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-001.png" [color="#000088"];
-    "/usr/share/ghostscript/9.26/Resource/Font/NimbusSans-Italic" -> prog1 [color="#8888CC"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-002.png" [color="#000088"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-003.png" [color="#000088"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-004.png" [color="#000088"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-005.png" [color="#000088"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-006.png" [color="#000088"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-007.png" [color="#000088"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-008.png" [color="#000088"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-009.png" [color="#000088"];
-    "/usr/share/ghostscript/9.26/Resource/Font/NimbusRoman-BoldItalic" -> prog1 [color="#8888CC"];
-    "/usr/share/ghostscript/9.26/Resource/Font/NimbusSans-BoldItalic" -> prog1 [color="#8888CC"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-010.png" [color="#000088"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-011.png" [color="#000088"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-012.png" [color="#000088"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-013.png" [color="#000088"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-014.png" [color="#000088"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-015.png" [color="#000088"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-016.png" [color="#000088"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-017.png" [color="#000088"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-018.png" [color="#000088"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-019.png" [color="#000088"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-020.png" [color="#000088"];
-    "/usr/share/ghostscript/9.26/Resource/CMap/Identity-H" -> prog1 [color="#8888CC"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-021.png" [color="#000088"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-022.png" [color="#000088"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-023.png" [color="#000088"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-024.png" [color="#000088"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-025.png" [color="#000088"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-026.png" [color="#000088"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-027.png" [color="#000088"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-028.png" [color="#000088"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-029.png" [color="#000088"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-030.png" [color="#000088"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-031.png" [color="#000088"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-032.png" [color="#000088"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-033.png" [color="#000088"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-034.png" [color="#000088"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-035.png" [color="#000088"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-036.png" [color="#000088"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-037.png" [color="#000088"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-038.png" [color="#000088"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-039.png" [color="#000088"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-040.png" [color="#000088"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-041.png" [color="#000088"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-042.png" [color="#000088"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-043.png" [color="#000088"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-044.png" [color="#000088"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-045.png" [color="#000088"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-046.png" [color="#000088"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-047.png" [color="#000088"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-048.png" [color="#000088"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-049.png" [color="#000088"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-050.png" [color="#000088"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-051.png" [color="#000088"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-052.png" [color="#000088"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-053.png" [color="#000088"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-054.png" [color="#000088"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-055.png" [color="#000088"];
-    prog1 -> "/home/andy/pdf/test_fontArialNotEmbedded-056.png" [color="#000088"];
+    "/usr/lib/x86_64-linux-gnu/libtiff.so.5" -> prog0 [color="#8888CC"];
+    "/usr/lib/x86_64-linux-gnu/libcupsimage.so.2" -> prog0 [color="#8888CC"];
+    "/usr/lib/x86_64-linux-gnu/libcups.so.2" -> prog0 [color="#8888CC"];
+    "/usr/lib/x86_64-linux-gnu/libijs-0.35.so" -> prog0 [color="#8888CC"];
+    "/usr/lib/x86_64-linux-gnu/libpng16.so.16" -> prog0 [color="#8888CC"];
+    "/usr/lib/x86_64-linux-gnu/libjbig2dec.so.0" -> prog0 [color="#8888CC"];
+    "/usr/lib/x86_64-linux-gnu/libjpeg.so.8" -> prog0 [color="#8888CC"];
+    "/lib/x86_64-linux-gnu/libz.so.1" -> prog0 [color="#8888CC"];
+    "/usr/lib/x86_64-linux-gnu/liblcms2.so.2" -> prog0 [color="#8888CC"];
+    "/lib/x86_64-linux-gnu/libm.so.6" -> prog0 [color="#8888CC"];
+    "/lib/x86_64-linux-gnu/libdl.so.2" -> prog0 [color="#8888CC"];
+    "/lib/x86_64-linux-gnu/libidn.so.11" -> prog0 [color="#8888CC"];
+    "/usr/lib/x86_64-linux-gnu/libpaper.so.1" -> prog0 [color="#8888CC"];
+    "/usr/lib/x86_64-linux-gnu/libfontconfig.so.1" -> prog0 [color="#8888CC"];
+    "/usr/lib/x86_64-linux-gnu/libfreetype.so.6" -> prog0 [color="#8888CC"];
+    "/lib/x86_64-linux-gnu/libpthread.so.0" -> prog0 [color="#8888CC"];
+    "/lib/x86_64-linux-gnu/liblzma.so.5" -> prog0 [color="#8888CC"];
+    "/usr/lib/x86_64-linux-gnu/libjbig.so.0" -> prog0 [color="#8888CC"];
+    "/usr/lib/x86_64-linux-gnu/libgssapi_krb5.so.2" -> prog0 [color="#8888CC"];
+    "/usr/lib/x86_64-linux-gnu/libgnutls.so.30" -> prog0 [color="#8888CC"];
+    "/usr/lib/x86_64-linux-gnu/libavahi-common.so.3" -> prog0 [color="#8888CC"];
+    "/usr/lib/x86_64-linux-gnu/libavahi-client.so.3" -> prog0 [color="#8888CC"];
+    "/lib/x86_64-linux-gnu/libexpat.so.1" -> prog0 [color="#8888CC"];
+    "/usr/lib/x86_64-linux-gnu/libkrb5.so.3" -> prog0 [color="#8888CC"];
+    "/usr/lib/x86_64-linux-gnu/libk5crypto.so.3" -> prog0 [color="#8888CC"];
+    "/lib/x86_64-linux-gnu/libcom_err.so.2" -> prog0 [color="#8888CC"];
+    "/usr/lib/x86_64-linux-gnu/libkrb5support.so.0" -> prog0 [color="#8888CC"];
+    "/usr/lib/x86_64-linux-gnu/libp11-kit.so.0" -> prog0 [color="#8888CC"];
+    "/usr/lib/x86_64-linux-gnu/libidn2.so.0" -> prog0 [color="#8888CC"];
+    "/usr/lib/x86_64-linux-gnu/libunistring.so.2" -> prog0 [color="#8888CC"];
+    "/usr/lib/x86_64-linux-gnu/libtasn1.so.6" -> prog0 [color="#8888CC"];
+    "/usr/lib/x86_64-linux-gnu/libnettle.so.6" -> prog0 [color="#8888CC"];
+    "/usr/lib/x86_64-linux-gnu/libhogweed.so.4" -> prog0 [color="#8888CC"];
+    "/usr/lib/x86_64-linux-gnu/libgmp.so.10" -> prog0 [color="#8888CC"];
+    "/lib/x86_64-linux-gnu/libdbus-1.so.3" -> prog0 [color="#8888CC"];
+    "/lib/x86_64-linux-gnu/libkeyutils.so.1" -> prog0 [color="#8888CC"];
+    "/lib/x86_64-linux-gnu/libresolv.so.2" -> prog0 [color="#8888CC"];
+    "/usr/lib/x86_64-linux-gnu/libffi.so.6" -> prog0 [color="#8888CC"];
+    "/lib/x86_64-linux-gnu/libsystemd.so.0" -> prog0 [color="#8888CC"];
+    "/lib/x86_64-linux-gnu/librt.so.1" -> prog0 [color="#8888CC"];
+    "/usr/lib/x86_64-linux-gnu/liblz4.so.1" -> prog0 [color="#8888CC"];
+    "/lib/x86_64-linux-gnu/libgcrypt.so.20" -> prog0 [color="#8888CC"];
+    "/lib/x86_64-linux-gnu/libgpg-error.so.0" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/gs_init.ps" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/gs_std_e.ps" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/gs_il1_e.ps" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/gs_statd.ps" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/gs_fonts.ps" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/gs_cspace.ps" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/gs_img.ps" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/gs_btokn.ps" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/gs_dps1.ps" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/gs_dps2.ps" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/gs_agl.ps" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/gs_type1.ps" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/gs_lev2.ps" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/gs_res.ps" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/gs_resmp.ps" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/gs_typ42.ps" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/gs_cidfn.ps" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/gs_ciddc.ps" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/gs_cidcm.ps" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/gs_fntem.ps" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/xlatmap" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/gs_sym_e.ps" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/gs_dbt_e.ps" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/gs_cidtt.ps" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/gs_cidfm.ps" -> prog0 [color="#8888CC"];
+    "/var/lib/ghostscript/fonts/cidfmap" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/gs_cmap.ps" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/gs_setpd.ps" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/gs_fapi.ps" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/FAPIfontmap" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/FAPIcidfmap" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/gs_typ32.ps" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/gs_frsd.ps" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/gs_ll3.ps" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/IdiomSet/Pscript5Idiom" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/gs_icc.ps" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/gs_mex_e.ps" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/gs_mro_e.ps" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/gs_pdf_e.ps" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/gs_wan_e.ps" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/pdf_ops.ps" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/gs_l2img.ps" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/pdf_rbld.ps" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/pdf_base.ps" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/pdf_draw.ps" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/pdf_font.ps" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/pdf_main.ps" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/pdf_sec.ps" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/gs_cff.ps" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/gs_mgl_e.ps" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/gs_ttf.ps" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/gs_dps.ps" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/gs_dpnxt.ps" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/gs_epsf.ps" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/gs_pdfwr.ps" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/Fontmap" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Init/Fontmap.GS" -> prog0 [color="#8888CC"];
+    "/var/lib/ghostscript/fonts/Fontmap" -> prog0 [color="#8888CC"];
+    "/etc/papersize" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/iccprofiles/default_gray.icc" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/iccprofiles/default_rgb.icc" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/iccprofiles/default_cmyk.icc" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/iccprofiles/lab.icc" -> prog0 [color="#8888CC"];
+    "/home/andy/pdf/test_fontArialNotEmbedded.pdf" -> prog0 [color="#8888CC"];
+    "/etc/fonts/fonts.conf" -> prog0 [color="#8888CC"];
+    "/etc/fonts/conf.d/10-antialias.conf" -> prog0 [color="#8888CC"];
+    "/etc/fonts/conf.d/10-hinting-slight.conf" -> prog0 [color="#8888CC"];
+    "/etc/fonts/conf.d/10-scale-bitmap-fonts.conf" -> prog0 [color="#8888CC"];
+    "/etc/fonts/conf.d/11-lcdfilter-default.conf" -> prog0 [color="#8888CC"];
+    "/etc/fonts/conf.d/20-unhint-small-dejavu-lgc-sans-mono.conf" -> prog0 [color="#8888CC"];
+    "/etc/fonts/conf.d/20-unhint-small-dejavu-lgc-sans.conf" -> prog0 [color="#8888CC"];
+    "/etc/fonts/conf.d/20-unhint-small-dejavu-lgc-serif.conf" -> prog0 [color="#8888CC"];
+    "/etc/fonts/conf.d/20-unhint-small-dejavu-sans-mono.conf" -> prog0 [color="#8888CC"];
+    "/etc/fonts/conf.d/20-unhint-small-dejavu-sans.conf" -> prog0 [color="#8888CC"];
+    "/etc/fonts/conf.d/20-unhint-small-dejavu-serif.conf" -> prog0 [color="#8888CC"];
+    "/etc/fonts/conf.d/20-unhint-small-vera.conf" -> prog0 [color="#8888CC"];
+    "/etc/fonts/conf.d/30-metric-aliases.conf" -> prog0 [color="#8888CC"];
+    "/etc/fonts/conf.d/40-nonlatin.conf" -> prog0 [color="#8888CC"];
+    "/etc/fonts/conf.d/45-generic.conf" -> prog0 [color="#8888CC"];
+    "/etc/fonts/conf.d/45-latin.conf" -> prog0 [color="#8888CC"];
+    "/etc/fonts/conf.d/49-sansserif.conf" -> prog0 [color="#8888CC"];
+    "/etc/fonts/conf.d/50-user.conf" -> prog0 [color="#8888CC"];
+    "/etc/fonts/conf.d/51-local.conf" -> prog0 [color="#8888CC"];
+    "/etc/fonts/conf.d/57-dejavu-sans-mono.conf" -> prog0 [color="#8888CC"];
+    "/etc/fonts/conf.d/57-dejavu-sans.conf" -> prog0 [color="#8888CC"];
+    "/etc/fonts/conf.d/57-dejavu-serif.conf" -> prog0 [color="#8888CC"];
+    "/etc/fonts/conf.d/58-dejavu-lgc-sans-mono.conf" -> prog0 [color="#8888CC"];
+    "/etc/fonts/conf.d/58-dejavu-lgc-sans.conf" -> prog0 [color="#8888CC"];
+    "/etc/fonts/conf.d/58-dejavu-lgc-serif.conf" -> prog0 [color="#8888CC"];
+    "/etc/fonts/conf.d/60-generic.conf" -> prog0 [color="#8888CC"];
+    "/etc/fonts/conf.d/60-latin.conf" -> prog0 [color="#8888CC"];
+    "/etc/fonts/conf.d/65-fonts-persian.conf" -> prog0 [color="#8888CC"];
+    "/etc/fonts/conf.d/65-nonlatin.conf" -> prog0 [color="#8888CC"];
+    "/etc/fonts/conf.d/69-unifont.conf" -> prog0 [color="#8888CC"];
+    "/etc/fonts/conf.d/70-no-bitmaps.conf" -> prog0 [color="#8888CC"];
+    "/etc/fonts/conf.d/80-delicious.conf" -> prog0 [color="#8888CC"];
+    "/etc/fonts/conf.d/90-synthetic.conf" -> prog0 [color="#8888CC"];
+    "/var/cache/fontconfig/3830d5c3ddfd5cd38a049b759396e72e-le64.cache-7" -> prog0 [color="#8888CC"];
+    "/var/cache/fontconfig/4c599c202bc5c08e2d34565a40eac3b2-le64.cache-7" -> prog0 [color="#8888CC"];
+    "/var/cache/fontconfig/32b6488e5b8292a2e95c79d947e009e8-le64.cache-7" -> prog0 [color="#8888CC"];
+    "/var/cache/fontconfig/57e423e26b20ab21d0f2f29c145174c3-le64.cache-7" -> prog0 [color="#8888CC"];
+    "/var/cache/fontconfig/7ef2298fde41cc6eeb7af42e48b7d293-le64.cache-7" -> prog0 [color="#8888CC"];
+    "/usr/share/fonts/cmap/adobe-cns1" -> prog0 [color="#8888CC"];
+    "/var/cache/fontconfig/f1f2465696798768e9653f19e17ccdc8-le64.cache-7" -> prog0 [color="#8888CC"];
+    "/usr/share/fonts/cmap/adobe-gb1" -> prog0 [color="#8888CC"];
+    "/var/cache/fontconfig/95530828ff6c81d309f8258d8d02a23e-le64.cache-7" -> prog0 [color="#8888CC"];
+    "/usr/share/fonts/cmap/adobe-japan1" -> prog0 [color="#8888CC"];
+    "/var/cache/fontconfig/d3e5c4ee2ceb1fc347f91d4cefc53bc0-le64.cache-7" -> prog0 [color="#8888CC"];
+    "/usr/share/fonts/cmap/adobe-japan2" -> prog0 [color="#8888CC"];
+    "/var/cache/fontconfig/e52a45a1c8c8fe895fc0fc8c4e6999b8-le64.cache-7" -> prog0 [color="#8888CC"];
+    "/usr/share/fonts/cmap/adobe-korea1" -> prog0 [color="#8888CC"];
+    "/var/cache/fontconfig/188ac73a183f12857f63bb60a4a6d603-le64.cache-7" -> prog0 [color="#8888CC"];
+    "/var/cache/fontconfig/d589a48862398ed80a3d6066f4f56f4c-le64.cache-7" -> prog0 [color="#8888CC"];
+    "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf" -> prog0 [color="#8888CC"];
+    "/usr/share/fonts/truetype/dejavu/DejaVuSansMono-Bold.ttf" -> prog0 [color="#8888CC"];
+    "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf" -> prog0 [color="#8888CC"];
+    "/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf" -> prog0 [color="#8888CC"];
+    "/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf" -> prog0 [color="#8888CC"];
+    "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Font/NimbusRoman-Regular" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Decoding/StandardEncoding" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Font/NimbusSans-Bold" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Font/NimbusSans-Regular" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Font/NimbusRoman-Bold" -> prog0 [color="#8888CC"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-001.png" [color="#000088"];
+    "/usr/share/ghostscript/9.26/Resource/Font/NimbusSans-Italic" -> prog0 [color="#8888CC"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-002.png" [color="#000088"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-003.png" [color="#000088"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-004.png" [color="#000088"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-005.png" [color="#000088"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-006.png" [color="#000088"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-007.png" [color="#000088"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-008.png" [color="#000088"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-009.png" [color="#000088"];
+    "/usr/share/ghostscript/9.26/Resource/Font/NimbusRoman-BoldItalic" -> prog0 [color="#8888CC"];
+    "/usr/share/ghostscript/9.26/Resource/Font/NimbusSans-BoldItalic" -> prog0 [color="#8888CC"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-010.png" [color="#000088"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-011.png" [color="#000088"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-012.png" [color="#000088"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-013.png" [color="#000088"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-014.png" [color="#000088"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-015.png" [color="#000088"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-016.png" [color="#000088"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-017.png" [color="#000088"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-018.png" [color="#000088"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-019.png" [color="#000088"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-020.png" [color="#000088"];
+    "/usr/share/ghostscript/9.26/Resource/CMap/Identity-H" -> prog0 [color="#8888CC"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-021.png" [color="#000088"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-022.png" [color="#000088"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-023.png" [color="#000088"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-024.png" [color="#000088"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-025.png" [color="#000088"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-026.png" [color="#000088"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-027.png" [color="#000088"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-028.png" [color="#000088"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-029.png" [color="#000088"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-030.png" [color="#000088"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-031.png" [color="#000088"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-032.png" [color="#000088"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-033.png" [color="#000088"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-034.png" [color="#000088"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-035.png" [color="#000088"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-036.png" [color="#000088"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-037.png" [color="#000088"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-038.png" [color="#000088"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-039.png" [color="#000088"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-040.png" [color="#000088"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-041.png" [color="#000088"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-042.png" [color="#000088"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-043.png" [color="#000088"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-044.png" [color="#000088"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-045.png" [color="#000088"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-046.png" [color="#000088"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-047.png" [color="#000088"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-048.png" [color="#000088"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-049.png" [color="#000088"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-050.png" [color="#000088"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-051.png" [color="#000088"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-052.png" [color="#000088"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-053.png" [color="#000088"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-054.png" [color="#000088"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-055.png" [color="#000088"];
+    prog0 -> "/home/andy/pdf/test_fontArialNotEmbedded-056.png" [color="#000088"];
 }
